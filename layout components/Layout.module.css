@@ -1,0 +1,127 @@
+/* Header Styles */
+
+.headerContainer{
+    display: flex;
+    place-content: space-between;
+    align-items: center;
+    padding: 1.8em 0;
+    font-family: 'Cabin', sans-serif;
+}
+
+.formItself{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.searchBox{
+    height: 4em;
+    width: 15em;
+    border-radius: 50px;
+    border: 3px solid white;
+    box-shadow: 0px 0.5px 0px 0px black;
+}
+
+.searchSubmit{
+    height: 4em;
+    width: 5em;
+    border: none;
+    outline: none;
+    background-color: black;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.searchSubmit:hover{
+    transition: 0.1s;
+    background-color: greenyellow;
+}
+
+/* Navbar Styles */
+
+.navbarContainer{
+    display: flex;
+    place-content: left;
+    box-shadow: 0 0.2px 0 0 black;
+    padding: 2em 0;
+}
+
+.navbarLinks{
+    display: flex;
+    gap: 5px;
+}
+
+.links{
+    display: block;
+    height: 2em;
+    padding: 0 0.5em;
+    font-weight: 100;
+    font-size: 1rem;
+    font-family: 'B612 Mono', monospace;
+}
+
+/* Slider Styles */
+
+.sliderFlex{
+    display: flex;
+    place-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    max-width: 1200px;
+}
+
+.leftButton, .rightButton{
+    user-select: none;
+    cursor: pointer;
+}
+
+.overflowHiddenTag{
+    overflow: hidden;
+}
+
+.sliderItself{
+    display: flex;
+    place-content: center;
+    position: relative;
+    box-sizing: border-box;
+    max-width: 900px;
+    gap: 5px;
+}
+
+.individualSliderNew{
+    display: flex;
+    place-content: center;
+    box-sizing: border-box;
+}
+
+.individualSliderNew img{
+    width: 900px;
+    max-height: 60vh;
+    box-sizing: border-box;
+}
+
+.individualSliderNew div{
+    position: absolute;
+    padding: 0.7em/* 450px*/;
+    width: 900px;
+    background-color: white;
+    opacity: 0.5;
+    bottom: 0;
+    box-sizing: border-box;
+}
+
+.individualSliderNew p{
+    opacity: 1;
+    font-size: 1rem;
+    bottom: 0;
+}
+
+.box{
+    width: 50px;
+    border-radius: 20px;
+    background-color: gray;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    translate: 0 3em;
+}
