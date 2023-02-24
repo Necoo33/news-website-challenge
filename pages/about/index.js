@@ -6,13 +6,6 @@ export default function index() {
         <h2 style={ { textAlign: "center" } }>My name is Necdet Arda Etiman.</h2>
 
         <div style={ { textAlign: "justify", margin: "0 10vw" } }>
-            <p>
-                ABOUT THIS CHALLENGE: on the evenings of thursday, when i was working on slider tab i get 429 status code
-                from the api which you provided. Because of that i couldn't work on slider tab more(currently it would slide 
-                when you press left or right buttons) and because i couldn't figure how they look, i couldn't make the website 
-                responsive. This isn't because of me. 
-            </p>
-
             <p >I'm started code learning journey before 9 months ago. Until that time I learned
             Css, Vanilla Javascript, React, Next.js, Typescript and also various other liblary and tools.</p>
 
