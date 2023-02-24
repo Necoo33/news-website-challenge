@@ -1,12 +1,14 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import css from "./Layout.module.css";
 import { useRouter } from 'next/router';
 import Search from "../public/search.svg";
 import Image from 'next/image';
+import HamburgerMenu from './HamburgerMenu';
 
 export default function Header() {
     let router = useRouter();
     let searchRef = useRef();
+    let [openHamburgerMenu, setOpenHamburgerMenu] = useState(false);
 
     function handleSearch(param){
         param.preventDefault();
@@ -27,6 +29,15 @@ export default function Header() {
                     <Image width={18} height={18} src={Search} />
                 </button>
             </form>
+        </div>
+
+        <div className={css.hamburgerMenu}  >
+            <button className={css.hamburgerMenuButton} ><span onPointerDown={openHamburgerMenu ? () => setOpenHamburgerMenu(false) : () => setOpenHamburgerMenu(true)} class="material-symbols-outlined">menu</span></button>
+
+            <div className={css.hamburgerMenuBackground} style={ { display: openHamburgerMenu ? "block" : "none", transition: "1s" } }>
+                <HamburgerMenu/>
+            </div>
+
         </div>
     </div>
   )

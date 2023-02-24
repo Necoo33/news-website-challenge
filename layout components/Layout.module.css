@@ -37,6 +37,29 @@
     background-color: greenyellow;
 }
 
+/* Hamburger Menu Styles */
+
+.hamburgerMenu{
+    display: none;
+
+}
+
+.hmenuContainer{
+    background-color: #333;
+    position: absolute;
+    display: block;
+    right: 0;
+    z-index: 1000;
+    padding: 2em;
+}
+
+.hmenuItself .links{
+    display: block;
+    color: white;
+    margin: 1em 0;
+    font-size: 1rem;
+}
+
 /* Navbar Styles */
 
 .navbarContainer{
@@ -44,6 +67,7 @@
     place-content: left;
     box-shadow: 0 0.2px 0 0 black;
     padding: 2em 0;
+
 }
 
 .navbarLinks{
@@ -114,14 +138,53 @@
     opacity: 1;
     font-size: 1rem;
     bottom: 0;
+    text-align: center;
 }
 
-.box{
-    width: 50px;
-    border-radius: 20px;
-    background-color: gray;
-    display: block;
-    position: absolute;
-    bottom: 0;
-    translate: 0 3em;
+@media screen and (max-width: 768px){
+    .searchFormContainer{
+        display: none;
+    }
+
+    /* Hamburger Menu Styles */
+
+    .hamburgerMenu{
+        display: block;
+    }
+
+    .hamburgerMenuButton{
+        scale: 2;
+        border: none;
+        outline: none;
+        background-color: white;
+    }
+
+    .navbarContainer{
+        display: none;
+    }
+
+    .sliderFlex{
+        width: 30em;
+    }
+
+    .individualSliderNew p{
+        font-size: 0.8rem;
+        text-align: right;
+        inline-size: 500px
+    }
+}
+
+@media screen and (max-width: 500px){
+    .navbarContainer{
+        display: none;
+    }
+
+    .sliderFlex{
+        width: 25em;
+    }
+
+    .individualSliderNew p{
+        font-size: 0.8rem;
+        text-align: center;
+    }
 }

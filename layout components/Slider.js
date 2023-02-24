@@ -11,6 +11,7 @@ export default function Slider() {
     let router = useRouter()
     let [isPointerDown, setIsPointerDown] = useState(false);
     let [isImagesPressable, setIsImagesPressable] = useState(true);
+    let [eventsCanOccur, setEventsCanOccur] = useState(true);
 
     useEffect(function(){
         getData("676f017549224f488970f1835f9db971").then(param => setData(param.articles));
@@ -32,24 +33,6 @@ export default function Slider() {
         setSlideNews(slideNews => slideNews === data.slice(0, 3).length - 1 ? 0 : slideNews + 1);
     }
 
-    function handlePointerMove(param){
-        if(!isPointerDown){
-            return
-        }
-
-        if(param.movementX > 0){
-            param.movementX = 1;
-            setSlideNews(slideNews + 1);
-        } else if(param.movementX < 0){
-            param.movementX = -1;
-            setSlideNews(slideNews - 1);
-        }
-    }
-
-    function handleScroll(){
-        setIsImagesPressable(false);
-    }
-
   return (
     <div className={css.sliderFlex}>
         <div onClick={slideToLeft} className={css.leftButton} style={ { scale: "2" } } ref={leftButtonRef}><span className="material-symbols-outlined">chevron_left</span></div>
@@ -59,7 +42,9 @@ export default function Slider() {
                 {data && data.slice(0, 3).map(function(param){
                     return (<>
                                 <div className={css.individualSliderNew} style={ { translate: slideNews === 0 ? `${slideNews+100}%` : `-${slideNews === 1 ? slideNews : slideNews + 100}%`, transition: "0.3s" } }>
-                                    <img /*onPointerDown={isPointerDown ? () => setIsPointerDown(false) : () => setIsPointerDown(true)} onPointerMove={(e) => handlePointerMove(e)}*/ onPointerUp={() => router.push(param.url)} src={param.urlToImage ? param.urlToImage : "https://via.placeholder.com/700x300"} draggable="false" />
+                                    <img onPointerUp={ eventsCanOccur ? () => router.push(param.url) : ""} 
+                                         src={param.urlToImage ? param.urlToImage : "https://via.placeholder.com/700x300"} 
+                                         draggable="false" />
                                     <div>
                                         <p>{param.title}</p>
                                     </div>

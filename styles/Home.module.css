@@ -43,3 +43,27 @@
   display: block;
   width: 20vw;
 }
+
+@media screen and (max-width: 768px){
+  .hero{
+    display: flex;
+    place-content: center;
+  }
+
+  .newsContainer{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .individualNew{
+    grid-column: 2;
+    grid-template-columns: 1;
+  }
+
+  .newImage{
+    grid-row: 1;
+  }
+
+  .newInfos{
+    grid-row: 2;
+  }
+}
